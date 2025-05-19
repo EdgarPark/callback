@@ -148,12 +148,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IPCMessageQueue.cpp" />
+    <ClCompile Include="LocalMessageQueue.cpp" />
     <ClCompile Include="solution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callback.hpp" />
     <ClInclude Include="callbackDispatcher.hpp" />
     <ClInclude Include="callbackMng.hpp" />
+    <ClInclude Include="IPCMessageQueue.h" />
+    <ClInclude Include="LocalMessageQueue.h" />
+    <ClInclude Include="MessageDef.h" />
+    <ClInclude Include="messageQueue.h" />
+    <ClInclude Include="MessageQueueFactory.h" />
     <ClInclude Include="sample.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

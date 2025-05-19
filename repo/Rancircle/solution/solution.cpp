@@ -3,6 +3,10 @@
 #include "callbackDispatcher.hpp"
 #include <iostream>
 #include "sample.h"
+
+#include "MessageDef.h"
+#include "MessageQueueFactory.h"
+
 using namespace std;
 
  class AsyncHandler {
@@ -96,6 +100,23 @@ int main()
     callbackManager.invokeVoid(4, "Hello from main");
    int sum = callbackManager.invoke<int>(3, 10, 20);
    std::cout << "Lambda result: " << sum << std::endl;
+
+
+   //Message Queue 테스트
+   auto queue = std::make_unique<IPCMessageQueue>("TestQueue", 2);
+   queue->RegisterHandler(MSG_UPDATE, [](const std::vector<IMessageQueue::Parameter>& params) {
+      // Handle message
+      std::cout << "Received MSG_UPDATE" << std::endl;
+      });
+
+   queue->Start();
+
+   // Using MSG_CALL macro
+   MSG_CALL(queue, MSG_UPDATE);                // 매개변수 없음
+   MSG_CALL(queue, MSG_UPDATE, 42);            // 1개 매개변수
+   MSG_CALL(queue, MSG_UPDATE, 42, "Hello");   // 2개 매개변수
+   MSG_CALL(queue, MSG_UPDATE, 1, 2, 3);       // 3개 매개변수
+   MSG_CALL(queue, MSG_UPDATE, 1, 2, 3, 4);    // 4개 매개변수
 
    return 0;
 }

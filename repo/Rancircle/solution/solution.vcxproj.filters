@@ -18,6 +18,12 @@
     <ClCompile Include="solution.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="IPCMessageQueue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalMessageQueue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callback.hpp">
@@ -31,6 +37,21 @@
     </ClInclude>
     <ClInclude Include="callbackMng.hpp">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="messageQueue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IPCMessageQueue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalMessageQueue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageQueueFactory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDef.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
